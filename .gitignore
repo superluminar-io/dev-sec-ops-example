@@ -1,0 +1,12 @@
+*.js
+!jest.config.js
+*.d.ts
+node_modules
+
+# CDK asset staging directory
+.cdk.staging
+cdk.out
+# Exclude index.js in the task folder from being ignored
+!lib/containers/**/*.js
+!parse-cdk-nag-output.js
+!eslint.config.js
