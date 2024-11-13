@@ -139,10 +139,11 @@ The pipeline is designed with multiple stages to ensure code quality, security, 
 3. **Container Scanning**: Leverages Amazon ECR enhanced scanning for image vulnerability detection.
 4. **Infrastructure as Code (IaC) Scanning**: Integrates CDK Nag checks.
 5. **Manual Approval Gate**: Introduces a manual review process before production deployment.
-6. **Least Privilege IAM**: Implements finely scoped IAM permissions.
-7. **Web Application Firewall (WAF)**: Configures basic WAF rules for application protection.
-8. **VPC Flow Logs**: Enables VPC flow logs for network traffic monitoring.
-9. **Non-root Users in Containers**: Implements best practice of running containers as non-root users.
+6. **Principle of Least Privilege**: IAM roles and policies are configured to grant only the minimum permissions necessary for each component to perform its intended functions.
+7. **Logging and Monitoring**: Implement comprehensive monitoring for the pipeline and application.
+8. **Web Application Firewall (WAF)**: Configures basic WAF rules for application protection.
+9. **VPC Flow Logs**: Enables VPC flow logs for network traffic monitoring.
+10. **Non-root Users in Containers**: Implements best practice of running containers as non-root users.
 
 ## Security Demonstration: Resolving a Dependency Vulnerability
 
