@@ -70,8 +70,8 @@ The project is structured to separate application code, infrastructure, and pipe
 1. **Clone the repository**:
 
    ```bash
-   git clone https://github.com/michelangelo17/dev-sec-ops-example.git
-   cd dev-sec-ops-example
+   git clone <your-repository-url>
+   cd <repository-name>
    ```
 
 2. **Install project dependencies**:
@@ -86,9 +86,18 @@ The project is structured to separate application code, infrastructure, and pipe
    aws configure
    ```
 
-4. **Update GitHub connection details**:
+4. **Update your configuration**:
 
-   - Modify the `ownerRepo` variable in `lib/stacks/pipelines/pipeline-stack.ts` to match your GitHub repository details.
+   - Update the `config.ts` file in the root directory with your GitHub details:
+
+   ```typescript
+   export const config = {
+     github: {
+       ownerRepo: "owner/repository-name", // Your GitHub repository
+       branch: "main", // Your default branch
+     },
+   }
+   ```
 
 5. **Set up AWS CodeStar connection for GitHub**:
 

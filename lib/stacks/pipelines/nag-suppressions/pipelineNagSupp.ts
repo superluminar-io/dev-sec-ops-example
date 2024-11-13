@@ -1,6 +1,9 @@
 import { Stack } from 'aws-cdk-lib'
 import { NagSuppressions } from 'cdk-nag'
 import { containerConfigs } from '../../../containers/container-config'
+import { config } from '../../../../config'
+
+const repoPathName = config.github.ownerRepo.replace('/', '_')
 
 // Common suppression reasons to reduce redundancy and improve readability
 const reasonIam5 =
@@ -34,7 +37,7 @@ export const pipelineNagSuppressions = (stack: Stack) => {
 
   NagSuppressions.addResourceSuppressionsByPath(
     stack,
-    '/PipelineStack/Pipeline/Pipeline/Source/michelangelo17_dev-sec-ops-example/CodePipelineActionRole/DefaultPolicy/Resource',
+    `/PipelineStack/Pipeline/Pipeline/Source/${repoPathName}/CodePipelineActionRole/DefaultPolicy/Resource`,
     [
       {
         id: 'AwsSolutions-IAM5',

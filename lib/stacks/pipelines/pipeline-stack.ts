@@ -16,6 +16,7 @@ import { containerConfigs } from '../../containers/container-config'
 import { createDockerBuildStep } from './pipeline-steps/docker-build-wave/createDockerBuildStep'
 import { createEcrScanStep } from './pipeline-steps/test-wave/ecrScanStep'
 import { createContainerTestStep } from './pipeline-steps/test-wave/containerTestStep'
+import { config } from '../../../config'
 
 export class PipelineStack extends Stack {
   constructor(scope: Construct, id: string, props?: StackProps) {
@@ -29,8 +30,8 @@ export class PipelineStack extends Stack {
     // Need to log in on the console after first deployment to finish connection to github, then restart the pipeline.
     // Go to CodePipeline, settings, update the connection to github and save.
 
-    const ownerRepo = 'michelangelo17/dev-sec-ops-example'
-    const branch = 'main'
+    const ownerRepo = config.github.ownerRepo
+    const branch = config.github.branch
 
     // Create a connection to GitHub for source code integration.
     // This uses AWS CodeStar Connections to securely connect to GitHub.

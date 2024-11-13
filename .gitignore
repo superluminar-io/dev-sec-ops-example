@@ -10,3 +10,5 @@ cdk.out
 !lib/containers/**/*.js
 !parse-cdk-nag-output.js
 !eslint.config.js
+
+cdk.context.json
